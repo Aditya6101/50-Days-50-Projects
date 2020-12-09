@@ -1,0 +1,142 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+:root {
+  --left-bg-clr: rgba(87, 84, 236, 0.7);
+  --right-bg-clr: rgba(43, 43, 43, 0.8);
+  --left-btn-hover-clr: rgb(87, 84, 236);
+  --right-btn-hover-clr: rgb(28, 122, 28);
+  --hover-width: 75%;
+  --other-width: 25%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+}
+
+.container {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  background-color: #333;
+}
+
+h1 {
+  color: #fff;
+  font-size: 3rem;
+  white-space: nowrap;
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.btn {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  transform: translateX(-50%);
+  width: 12rem;
+  padding: 1rem;
+  color: #fff;
+  border: 3px solid #fff;
+  transition: 250ms ease-in;
+}
+
+.split {
+  position: absolute;
+  height: 100%;
+  width: 50%;
+  overflow: hidden;
+}
+
+.split.left {
+  left: 0;
+  background: url(./ps.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.split.right {
+  right: 0;
+  background: url("./xbox.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.split.left::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: var(--left-bg-clr);
+}
+
+.split.right::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: var(--right-bg-clr);
+}
+
+.split.left,
+.split.right,
+.split.left::before,
+.split.right::before {
+  transition: all 1s ease-in-out;
+}
+
+.split.left .btn:hover {
+  background-color: var(--left-btn-hover-clr);
+  border-color: var(--left-btn-hover-clr);
+}
+
+.split.right .btn:hover {
+  background-color: var(--right-btn-hover-clr);
+  border-color: var(--right-btn-hover-clr);
+}
+
+.hover-left .left {
+  width: var(--hover-width);
+}
+
+.hover-left .right {
+  width: var(--other-width);
+}
+
+.hover-right .right {
+  width: var(--hover-width);
+}
+
+.hover-right .left {
+  width: var(--other-width);
+}
+
+@media (max-width: 800) {
+  h1 {
+    top: 30%;
+    font-size: 2rem;
+  }
+  .btn {
+    width: 8rem;
+    padding: 0.7rem;
+  }
+}
