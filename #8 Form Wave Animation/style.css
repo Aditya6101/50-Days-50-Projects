@@ -1,0 +1,104 @@
+@import url("https://fonts.googleapis.com/css?family=Muli&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Muli", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+  background-color: steelblue;
+}
+
+.container {
+  padding: 20px 40px;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 5px;
+}
+
+.form-control {
+  position: relative;
+  margin: 20px 0px 40px;
+  width: 300px;
+}
+
+.form-control input {
+  background: transparent;
+  border: none;
+  display: block;
+  border-bottom: 2px solid #fff;
+  width: 100%;
+  padding: 15px 0px;
+  margin-top: 20px;
+  color: #fff;
+}
+
+form h1 {
+  color: #fff;
+  font-size: 1.8rem;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+form a {
+  color: lightblue;
+  text-decoration: none;
+}
+
+.login-btn {
+  width: 100%;
+  background-color: lightblue;
+  color: #000;
+  display: inline-block;
+  padding: 10px;
+  font-family: inherit;
+  font-size: 1rem;
+  border: none;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.login-btn:focus {
+  outline: none;
+}
+
+.login-btn:active {
+  transform: scale(0.98);
+}
+
+.txt {
+  margin-top: 30px;
+  color: #fff;
+}
+
+.form-control input:focus,
+.form-control input:valid {
+  outline: 0;
+  border-bottom-color: lightblue;
+}
+
+.form-control label {
+  position: absolute;
+  top: 15px;
+  left: 0px;
+  color: #fff;
+}
+
+.form-control label span {
+  display: inline-block;
+  font-size: 18px;
+  min-width: 5px;
+  transition: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.form-control input:focus + label span,
+.form-control input:valid + label span {
+  color: lightblue;
+  transform: translateY(-30px);
+}
